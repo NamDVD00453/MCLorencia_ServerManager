@@ -1,8 +1,10 @@
 package com.mclorencia;
 
+import com.mclorencia.serverhandle.MainServer;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        new MainServer().execute();
     }
 }
