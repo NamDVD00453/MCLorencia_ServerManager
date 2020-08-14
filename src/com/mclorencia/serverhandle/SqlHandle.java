@@ -27,8 +27,13 @@ public class SqlHandle {
     static Connection getMySQLConnection(String hostName, String dbName, String userName, String password)
             throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName
-                + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String connectionURL = "jdbc:mysql://" +
+                hostName + ":3306/" +
+                dbName +
+                "?useUnicode=true" +
+                "&useJDBCCompliantTimezoneShift=true" +
+                "&useLegacyDatetimeCode=false" +
+                "&serverTimezone=UTC";
         return DriverManager.getConnection(connectionURL, userName, password);
     }
 
@@ -45,15 +50,14 @@ public class SqlHandle {
                 u.setHashPassword(rs.getString("password"));
                 listUser.add(u);
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         return gson.toJson(listUser);
     }
 
     public String saveUser(UserDBO userDBO){
         PreparedStatement preparedStatement = null;
-        //String SqlQuery = "INSERT INTO `" + dbName +"`.`" + accountTable + "` (`username`, `password`, `password_salt`) VALUES (? , ? , ?);";
         String SqlQuery = "INSERT INTO " + accountTable + "(username, password, password_salt) VALUES (?, ?, ?);";
         try {
             preparedStatement = conn.prepareStatement(SqlQuery);
