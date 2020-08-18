@@ -1,0 +1,1 @@
+Could not load content for https://html.nkdev.info/goodgames/assets/vendor/hammerjs/hammer.js (HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE)
