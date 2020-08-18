@@ -2458,6 +2458,10 @@ img.rounded {
     transition: 0.2s opacity, 0.2s transform, 0.2s visibility;
     z-index: 1;
 }
+.nk-navbar .nk-nav .dropdownupdate {
+    margin-top: 44px; 
+    margin-left: -9px;
+}
 .nk-navbar .nk-nav .dropdown::before {
     content: "";
     position: absolute;
