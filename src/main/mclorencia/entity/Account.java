@@ -1,11 +1,11 @@
 package main.mclorencia.entity;
 
 public class Account {
-    private String AccountId;
+    private int AccountId;
     private String Username;
     private String Password;
 
-    public Account(String accountId, String username, String password) {
+    public Account(int accountId, String username, String password) {
         AccountId = accountId;
         Username = username;
         Password = password;
@@ -14,11 +14,11 @@ public class Account {
     public Account() {
     }
 
-    public String getAccountId() {
+    public int getAccountId() {
         return AccountId;
     }
 
-    public void setAccountId(String accountId) {
+    public void setAccountId(int accountId) {
         AccountId = accountId;
     }
 

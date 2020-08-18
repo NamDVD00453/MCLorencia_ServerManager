@@ -42,7 +42,10 @@ public class MainServer {
         HttpServer server;
         try {
             server = HttpServer.create(new InetSocketAddress(port), 0);
-            server.createContext("/api", createHttpHandler);
+
+            server.createContext("/api/account", createHttpHandler);
+            server.createContext("/api/post", createHttpHandler);
+
             //Executor mac dinh
             server.setExecutor(null);
             //start Server
